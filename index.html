@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b1d">
+  <meta name="description" content="پەناگەی دڵ؛ شوێنێک بۆ وتە جوانەکان و ئارامی دڵ.">
+
+  <title>پەناگەی دڵ | Heart Haven</title>
+
+  <!-- Google Fonts: Arabic, Kurdish, Persian, English and Russian -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="background-effects" aria-hidden="true">
+    <div class="stars" id="stars"></div>
+    <div class="moon"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#home" class="brand">
+      <span class="brand-icon">♡</span>
+      <span class="brand-name" data-i18n="brand">پەناگەی دڵ</span>
+    </a>
+
+    <nav class="navigation" id="navigation">
+      <a href="#home" class="nav-link active" data-i18n="home">سەرەتا</a>
+      <a href="#quotes" class="nav-link" data-i18n="quotes">وتەکان</a>
+      <a href="#favorites" class="nav-link" data-i18n="favorites">دڵخوازەکان</a>
+      <a href="#add-quote" class="nav-link" data-i18n="addQuote">وتەی خۆت</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="language-control">
+        <span class="sr-only" data-i18n="language">زمان</span>
+        <select id="languageSelect" aria-label="Select language">
+          <option value="ku">☾ کوردی</option>
+          <option value="ar">☾ العربية</option>
+          <option value="en">☾ English</option>
+          <option value="fa">☾ فارسی</option>
+          <option value="ru">☾ Русский</option>
+        </select>
+      </label>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">
+          <span>✦</span>
+          <span data-i18n="heroEyebrow">شوێنێک بۆ ئارامی دڵت</span>
+          <span>✦</span>
+        </span>
+
+        <h1 data-i18n="heroTitle">
+          لە پەناگەی دڵتدا
+          <span>ئارامی بدۆزەوە</span>
+        </h1>
+
+        <p class="hero-description" data-i18n="heroDescription">
+          هەندێک وشە هەن کە ناتوانیت بیڵێیت،
+          بەڵام دڵت هەموو ڕۆژێک هەستیان پێدەکات.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#quotes" class="button button-primary">
+            <span data-i18n="explore">گەڕان لە وتەکان</span>
+            <span>↙</span>
+          </a>
+
+          <a href="#favorites" class="button button-secondary">
+            <span>♡</span>
+            <span data-i18n="myFavorites">دڵخوازەکانم</span>
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span class="note-line"></span>
+          <span data-i18n="heroNote">بۆ ئەو هەستانەی بە وشە ناوترێن</span>
+        </div>
+      </div>
+
+      <!-- Decorative illustration -->
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+
+        <span class="floating-star star-one">✦</span>
+        <span class="floating-star star-two">✧</span>
+        <span class="floating-star star-three">✦</span>
+        <span class="floating-star star-four">·</span>
+
+        <div class="heart-glow">
+          <span class="heart-symbol">♡</span>
+        </div>
+
+        <div class="art-caption">
+          <span class="caption-line"></span>
+          <span data-i18n="madeWithLove">دروستکراوە بە خۆشەویستی</span>
+          <span class="caption-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily quote -->
+    <section class="daily-section section" id="daily">
+      <div class="section-heading">
+        <span class="section-kicker" data-i18n="dailyKicker">
+          هەڵبژاردەی ئەمڕۆ
+        </span>
+
+        <h2 data-i18n="dailyTitle">وتەی ڕۆژ <span>✦</span></h2>
+
+        <p data-i18n="dailyDescription">
+          وشەیەک بۆ دەستپێکردنی ڕۆژێکی جوانتر.
+        </p>
+      </div>
+
+      <article class="daily-card quote-card" id="dailyQuoteCard">
+        <div class="quote-decoration">“</div>
+
+        <div class="quote-category" id="dailyCategory">
+          <span class="category-dot"></span>
+          <span data-i18n="hope">هیوا</span>
+        </div>
+
+        <blockquote id="dailyQuoteText">
+          تەنانەت لە تاریکترین شەودا، هێشتا ئەستێرەیەک دەدرەوشێتەوە.
+        </blockquote>
+
+        <p class="quote-author" id="dailyQuoteAuthor">
+          — پەناگەی دڵ
+        </p>
+
+        <div class="quote-divider"></div>
+
+        <div class="quote-actions">
+          <button
+            class="icon-button favorite-button"
+            id="dailyFavorite"
+            type="button"
+            data-action="favorite"
+            aria-pressed="false"
+          >
+            <span class="favorite-icon">♡</span>
+            <span data-i18n="favorite">دڵخواز</span>
+          </button>
+
+          <div class="quote-actions-right">
+            <button class="icon-button" id="dailyCopy" type="button" data-action="copy">
+              <span>▢</span>
+              <span data-i18n="copy">کۆپی</span>
+            </button>
+
+            <button class="icon-button" id="dailyShare" type="button" data-action="share">
+              <span>↗</span>
+              <span data-i18n="share">بڵاوکردنەوە</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Quotes collection -->
+    <section class="quotes-section section" id="quotes">
+      <div class="section-heading">
+        <span class="section-kicker" data-i18n="collectionKicker">
+          کۆگای هەستەکان
+        </span>
+
+        <h2 data-i18n="collectionTitle">وتەکانمان</h2>
+
+        <p data-i18n="collectionDescription">
+          ئەو وشانە بدۆزەرەوە کە وەک هەستی خۆت قسە دەکەن.
+        </p>
+      </div>
+
+      <!-- Search -->
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+
+        <input
+          type="search"
+          id="searchInput"
+          data-i18n-placeholder="searchPlaceholder"
+          placeholder="بگەڕێ بۆ وتەیەک..."
+          autocomplete="off"
+        >
+
+        <button id="searchClear" class="search-clear" type="button"
+          aria-label="Clear search" hidden>×</button>
+      </div>
+
+      <!-- Categories -->
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-button active" type="button"
+          data-category="all" data-i18n="all">هەموو</button>
+
+        <button class="filter-button" type="button"
+          data-category="love" data-i18n="love">خۆشەویستی</button>
+
+        <button class="filter-button" type="button"
+          data-category="sadness" data-i18n="sadness">دڵشکانی</button>
+
+        <button class="filter-button" type="button"
+          data-category="hope" data-i18n="hope">هیوا</button>
+
+        <button class="filter-button" type="button"
+          data-category="life" data-i18n="life">ژیان</button>
+
+        <button class="filter-button" type="button"
+          data-category="loneliness" data-i18n="loneliness">تەنهایی</button>
+      </div>
+
+      <div class="results-info">
+        <span id="resultsCount">٠ وتە</span>
+
+        <button
+          class="text-button"
+          id="clearFilters"
+          type="button"
+          data-i18n="clearFilters"
+        >
+          پاککردنەوەی گەڕان
+        </button>
+      </div>
+
+      <!-- JavaScript inserts quote cards here -->
+      <div class="quotes-grid" id="quotesGrid">
+        <div class="loading-state" data-i18n="loading">
+          چاوەڕێ بکە...
+        </div>
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-icon">☾</span>
+        <h3 data-i18n="emptyTitle">هیچ وتەیەک نەدۆزرایەوە</h3>
+        <p data-i18n="emptyDescription">
+          وشەیەکی تر تاقی بکەرەوە.
+        </p>
+      </div>
+    </section>
+
+    <!-- Favorites -->
+    <section class="favorites-section section" id="favorites">
+      <div class="section-heading">
+        <span class="section-kicker" data-i18n="favoritesKicker">
+          پارچەیەک لە دڵت
+        </span>
+
+        <h2 data-i18n="favoritesTitle">دڵخوازەکان <span>♡</span></h2>
+
+        <p data-i18n="favoritesDescription">
+          ئەو وتانەی دەتەوێت هەمیشە لە نزیکت بن.
+        </p>
+      </div>
+
+      <div class="quotes-grid" id="favoritesGrid"></div>
+
+      <div class="empty-state" id="favoritesEmpty">
+        <span class="empty-icon">♡</span>
+
+        <h3 data-i18n="favoritesEmptyTitle">
+          هێشتا هیچ وتەیەکت پاشەکەوت نەکردووە
+        </h3>
+
+        <p data-i18n="favoritesEmptyDescription">
+          دڵێک لەسەر وتەیەک دابگرە بۆ زیادکردنی بۆ دڵخوازەکانت.
+        </p>
+
+        <a href="#quotes" class="button button-secondary"
+          data-i18n="discoverQuotes">وتەکان ببینە</a>
+      </div>
+    </section>
+
+    <!-- Add a quote -->
+    <section class="add-section section" id="add-quote">
+      <div class="add-content">
+        <span class="section-kicker" data-i18n="addKicker">
+          وشەکانت بەهادارن
+        </span>
+
+        <h2 data-i18n="addTitle">دڵت چی دەڵێت؟</h2>
+
+        <p data-i18n="addDescription">
+          وتەیەک لە دڵتەوە بنووسە و لە پەناگەی دڵدا جێگای بۆ بکەرەوە.
+        </p>
+      </div>
+
+      <form class="quote-form" id="addQuoteForm">
+        <label for="newQuote" data-i18n="quoteLabel">
+          وتەکەت بنووسە
+        </label>
+
+        <textarea
+          id="newQuote"
+          name="quote"
+          rows="4"
+          maxlength="500"
+          required
+          data-i18n-placeholder="quotePlaceholder"
+          placeholder="هەستەکەت بە وشە دەرببڕە..."
+        ></textarea>
+
+        <div class="form-meta">
+          <span data-i18n="quoteHint">بە دڵ بنووسە ♡</span>
+          <span id="characterCount">0 / 500</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="quoteCategory" data-i18n="formCategory">
+              پۆلی وتە
+            </label>
+
+            <select id="quoteCategory" name="category">
+              <option value="love" data-i18n="love">خۆشەویستی</option>
+              <option value="sadness" data-i18n="sadness">دڵشکانی</option>
+              <option value="hope" data-i18n="hope">هیوا</option>
+              <option value="life" data-i18n="life">ژیان</option>
+              <option value="loneliness" data-i18n="loneliness">تەنهایی</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quoteAuthor" data-i18n="formAuthor">
+              ناوی نووسەر
+            </label>
+
+            <input
+              id="quoteAuthor"
+              name="author"
+              type="text"
+              maxlength="60"
+              data-i18n-placeholder="authorPlaceholder"
+              placeholder="ناوی تۆ (ئارەزوومەندانە)"
+            >
+          </div>
+        </div>
+
+        <button class="button button-primary submit-button" type="submit">
+          <span data-i18n="submitQuote">زیادکردنی وتە</span>
+          <span>✦</span>
+        </button>
+
+        <p class="form-notice" data-i18n="storageNotice">
+          وتەکەت یەکەم جار بۆ پشکنین دەنێردرێت.
+        </p>
+      </form>
+    </section>
+
+    <!-- Closing message -->
+    <section class="closing-section section">
+      <div class="closing-symbol">✧</div>
+
+      <p data-i18n="closingText">
+        هەموو دڵێک چیرۆکێکی هەیە، هەموو چیرۆکێکیش پەناگەیەکی دەوێت.
+      </p>
+
+      <span class="closing-heart">♡</span>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="#home" class="footer-brand" data-i18n="brand">
+      پەناگەی دڵ
+    </a>
+
+    <p data-i18n="footerText">
+      بە خۆشەویستی دروست کراوە، بۆ دڵەکان.
+    </p>
+
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> <span data-i18n="brand">پەناگەی دڵ</span></span>
+      <a href="#home" data-i18n="backToTop">گەڕانەوە بۆ سەرەوە ↑</a>
+    </div>
+  </footer>
+
+  <!-- Notifications -->
+  <div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+</body>
+</html>
